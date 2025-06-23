@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Withdraw BTC - Lightning Network</title>
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+
+    img {
+      width: 150px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    h3 {
+      color: #444;
+      margin-bottom: 30px;
+    }
+
+    input {
+      display: block;
+      margin: 15px auto;
+      padding: 10px;
+      width: 300px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ff9900;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    #loading {
+      display: none;
+      margin: 20px auto;
+    }
+
+    #error {
+      color: red;
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .footer {
+      margin-top: 100px;
+      font-size: 12px;
+      color: blue;
+    }
+
+    .footer img {
+      width: 14px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Embedded logo using base64 -->
+  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAB5oPpXAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAABExJREFUeJzt3cFtwkAUgFE9ExAkYHxxJ1GRqGCEHoAHIomqZPb6RfLb5VX8l/vNGkEFAAAAAAAAAAAAAMDvXj3x5Z1t/fx1ne/O7Kfd/Kn+v1ZwfPrOtHv9T+WQ57+kv9L9Wftq9L9ZcZgDjOwV9Wfq79Rv2V+xv1f5j+wPi5/xs1H77+bS3iY4EVrIyfPu4AH0f/17WsfRdy+Cyt1HywdE3uESoVZqD92UVf36+99XsF6ru9gCNQeXvXuOBiWHPTIckvl5zKMj+hUONOUeM2/4F8z56E97+uAIAAAAAAAAAAAD4q+wvA/Cbyf2R8UOeAAAAAElFTkSuQmCC" alt="Bitcoin Lightning Logo">
+
+  <h2>lightning network</h2>
+  <h3>Withdraw $13,606 via BTC Lightning Network</h3>
+
+  <input type="text" id="address" placeholder="Enter BTC Lightning Address">
+  <input type="text" id="invoice" placeholder="Enter Lightning Invoice Number">
+  <input type="text" id="amount" placeholder="Amount (fixed: 0.13 BTC)" value="0.13 BTC" readonly>
+
+  <button onclick="submitWithdraw()">Confirm Withdraw</button>
+
+  <div id="loading">Processing...</div>
+  <div id="error">Incomplete details (please input correct network withdraw details).</div>
+
+  <div class="footer">
+    <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=026" alt="BTC Icon">
+    contact.lightnin.network@gmail.com
+  </div>
+
+  <script>
+    function submitWithdraw() {
+      document.getElementById("loading").style.display = "block";
+      document.getElementById("error").style.display = "none";
+
+      setTimeout(() => {
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("error").style.display = "block";
+      }, 10000); // 10 seconds
+    }
+  </script>
+
+</body>
+</html>
